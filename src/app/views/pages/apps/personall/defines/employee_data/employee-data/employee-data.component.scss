@@ -1,0 +1,37 @@
+.nav-tabs {
+	background-color: transparent;
+}
+
+.tab-content {
+	background-color: white;
+	color: black;
+	padding: 5px
+}
+
+.nav-tabs > li > a {
+	background-color: #48b69f ;
+	border: groove outset;
+	border-color: white;
+	color: white;
+}
+.nav-tabs .active {
+	background-color: darkcyan !important;
+	border: medium none;
+	border-radius: 0;
+	color: #fff;
+}
+.nav-tabs > li > a:hover {
+	background-color: #303136 !important;
+	border: medium none;
+	border-radius: 0;
+	color: #fff;
+}
+.pad{
+	padding:5px;
+}
+.header-less-tabs.mat-tab-group .mat-tab-header {
+	display: none;
+}
+.modal-backdrop {
+	z-index: -1;
+}

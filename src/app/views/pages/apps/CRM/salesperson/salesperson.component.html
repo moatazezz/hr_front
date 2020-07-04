@@ -1,0 +1,168 @@
+
+<div class="row">
+	<div class="col-md-12">
+
+		<!-- BEGIN PAGE HEADER-->
+		<!-- BEGIN THEME PANEL -->
+		<!-- END THEME PANEL -->
+		<h1 class="page-title">
+			Sales Person Data
+			<small></small>
+		</h1>
+		<hr />
+
+		<form [formGroup]="emp" (ngSubmit)="save()">
+			<button type="button" style="margin:5px;" class="btn btn-primary" data-toggle="modal" (click)="refresh()" data-target="#exampleModalLong">
+				Sales Persons List
+			</button>
+
+			<button type="button" style="margin:5px;" class="btn btn-primary" (click)="clear()">
+				Add New
+			</button>
+			<button type="submit" [disabled]="!emp.valid" style="margin:5px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+				Save
+			</button>
+
+
+
+
+			<div class="row pad">
+				<div class="col-md-5">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-user"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Name" formControlName="Name" required>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div class="row pad">
+				<div class="col-md-5">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-phone"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Phone Number" formControlName="Phone">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row pad">
+				<div class="col-md-5">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fal fa-mobile"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Mobile Number" formControlName="Mobil">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row pad">
+
+
+				<div class="col-md-5">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-envelope"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Email Address" formControlName="Email">
+					</div>
+
+					<div *ngIf="errorHandling('Email','pattern')" class="text-danger">Email must be a valid email address</div>
+
+
+
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Modal -->
+
+		<div class="modal fade " id="exampleModalLong" role="dialog" data-backdrop="false">
+
+			<div class="modal-dialog modal-lg" role="document" data-target="#modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Sales Persons List</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form [formGroup]="emplist">
+							<mat-card *ngIf="isLoading"
+									  style="display: flex; justify-content: center; align-items: center">
+								<mat-progress-spinner color="primary"
+													  mode="indeterminate">
+								</mat-progress-spinner>
+							</mat-card>
+							<table class="table table-striped" formArrayName="empDetail" id="table">
+								<col style="width:20%">
+								<col style="width:15%">
+								<col style="width:15%">
+								<col style="width:20%">
+								<col style="width:15%">
+								<col style="width:15%">
+								<thead>
+
+									<tr>
+										<th scope="col">Name</th>
+										<th scope="col">Phone</th>
+										<th scope="col">Mobile</th>
+										<th scope="col">Email</th>
+									</tr>
+								</thead>
+								<tbody>
+
+
+									<tr *ngFor="let emp of emplist.controls.empDetail.controls; let i=index"
+										[formGroupName]="i">
+
+
+										<td>{{emp.value.Name}}</td>
+										<td>{{emp.value.Phone}}</td>
+										<td>{{emp.value.Mobil}}</td>
+										<td>{{emp.value.Email}}</td>
+										<td> <input class="btn btn-primary " style="width:100%" type="button" value="Edit" data-dismiss="modal" (click)="edit(emp.value.Id)"></td>
+										<td> <input class="btn btn-danger" style="width:100%" type="button" value="Delete" (click)="delete(emp.value)"></td>
+									</tr>
+									<!--<tr>
+			<th scope="row">2</th>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>-->
+								</tbody>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+					</div>
+				</div>
+			</div>
+		</div>
+

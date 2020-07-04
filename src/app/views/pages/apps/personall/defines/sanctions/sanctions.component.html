@@ -1,0 +1,400 @@
+
+
+
+
+
+
+<h1 class="page-title">
+	Sanctions
+
+	<small></small>
+</h1>
+
+<div class="col-md-12">
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-id-card-alt"></i>
+					</div>
+				</div>
+				<input type="number" class="form-control" placeholder="Sanction Code">
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="far fa-times-circle"></i>
+					</div>
+				</div>
+				<input class="form-control is-invalid" id="validationServer04" placeholder="Sanction DescriptionAr">
+				<div class="invalid-feedback">
+					Please Enter Sanction Description Arabic Name.
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="far fa-times-circle"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder="Sanction DescriptionEn">
+			</div>
+		</div>
+	</div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="far fa-times-circle"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder="Sanction Article Number">
+			</div>
+		</div>
+	</div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="far fa-times-circle"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder="Sanction  Description Material">
+			</div>
+		</div>
+	</div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group ">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="far fa-times-circle"></i>
+					</div>
+					<div class="input-group-text -bg-white">
+						<h6>Sanction Discount Type</h6>
+					</div>
+
+					<mat-radio-group aria-label="Trianer">
+						<mat-radio-button value="1">Fixed</mat-radio-button>
+						<mat-radio-button value="2">UnFixed</mat-radio-button>
+					</mat-radio-group>
+				</div>
+				
+			</div>
+		</div></div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group ">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="far fa-times-circle"></i>
+					</div>
+					<div class="input-group-text -bg-white">
+						<h6>Sanction Apply Discount</h6>
+					</div>
+					
+						<mat-radio-group aria-label="Trianer">
+							<mat-radio-button value="1">Montly</mat-radio-button>
+							<mat-radio-button value="2">Yearly</mat-radio-button>
+							<mat-radio-button value="3">From Hire Date</mat-radio-button>
+							
+						</mat-radio-group>
+					</div>
+				
+			</div>
+		</div></div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group ">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="far fa-times-circle"></i>
+					</div>
+					<div class="input-group-text -bg-white">
+						<h6>Sanction Discount First Time for </h6>
+					</div>
+					
+						<mat-radio-group aria-label="Trianer">
+							<mat-radio-button value="1">Oral Warning</mat-radio-button>
+							<mat-radio-button value="2">Drew Attention</mat-radio-button>
+							<mat-radio-button value="3">Discount Value</mat-radio-button>
+							<mat-radio-button value="3">Discount Ratio</mat-radio-button>
+							<mat-radio-button value="3">Dismissed from the Company</mat-radio-button>
+							
+						</mat-radio-group>
+					</div>
+				
+			</div>
+		</div></div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+	<!-- <kt-portlet>
+		<kt-portlet-header [sticky]="true" [title]="getComponentTitle()" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+			<ng-container ktPortletTools>
+				<a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10" mat-raised-button matTooltip="Back to the sectors list">
+					<i class="la la-arrow-left"></i>
+					<span class="kt-hidden-mobile">Prev</span>
+				</a>
+				<!-- <a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10"  mat-raised-button matTooltip="Back to the products list">
+
+						<span class="kt-hidden-mobile">Next</span>
+						<i class="la la-arrow-right"></i>
+					</a> -->
+	<!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">Save</span>
+	</a>
+	<!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+			<span class="kt-hidden-mobile">Edit</span>
+	</a> -->
+	<!-- <a href="javascript:;" class="btn btn-secondary kt-margin-r-10" (click)="reset()" [disabled]="selectedTab !== 0" mat-raised-button matTooltip="Reset changes">
+		<i class="la la-cog"></i>
+		<span class="kt-hidden-mobile">Reset</span>
+	</a>
+	<!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">Search</span>
+	</a>
+	<a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">NEW</span>
+	</a> -->
+	<!-- <button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+	<mat-menu #menu="matMenu">
+		<button mat-menu-item color="primary" (click)="onSumbit(true)">Save & Exit</button>
+		<button mat-menu-item color="primary">Save & Duplicate</button>
+		<button mat-menu-item color="primary" (click)="onSumbit(false)">Save & Continue</button>
+	</mat-menu>
+			</ng-container>
+		</kt-portlet-header>
+	<kt-portlet-body>
+		<div>
+
+			<form [formGroup]="dataForm" class="kt-form kt-form--group-seperator-dashed">
+				<kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+					Oh snap! Change a few things up and try submitting again.
+				</kt-alert>
+				<div class="kt-form__section kt-form__section--first">
+					<div class="kt-form__group">
+						<div class="row">
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Sanction code" formControlName="Code">
+									<mat-error>
+										Code is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Code</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Sanction DescriptionAr" formControlName="descriptionAr">
+									<mat-error>
+										DescriptionAr is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>DescriptionAr</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Sanction DescriptionEn" formControlName="descriptionEn">
+									<mat-error>
+										DescriptionEn is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>DescriptionEn</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+						</div>
+					</div>
+					<div class="kt-form__group">
+						<div class="row">
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Sanction Articlenumber" formControlName="articlenumber">
+									<mat-error>
+										Article Number is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Article Number</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Sanction Description Material" formControlName="descriptionmaterial">
+									<mat-error>
+										Description Material is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Description Material</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+
+									<mat-select placeholder="Sanction Discount Type" formControlName="discounttype" (selectionChange)="selected()">
+										<mat-option value="{{discounttype}}" *ngFor="let discounttype of AVAILABLE_DISCOUNTTYPE">{{discounttype}}</mat-option>
+									</mat-select>
+									<mat-error>
+										Discount Type is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Discount Type </strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+						</div>
+					</div>
+					<div class="kt-form__group">
+						<div class="row">
+							<div class="col-md-4 kt-margin-bottom-10-mobile" *ngIf="Fixedvalue">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Sanction Fixed Value" formControlName="fixedvalue">
+									<mat-error>
+										Fixed Value  is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Fixed Value </strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<mat-select placeholder="Sanction Apply Discount" formControlName="applydiscount">
+										<mat-option value="{{applydiscount}}" *ngFor="let applydiscount of AVAILABLE_APPLYDISCOUNT">{{applydiscount}}</mat-option>
+									</mat-select>
+									<mat-error>
+										Apply Discount is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Apply Discount</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<mat-select placeholder="Sanction Discount First Time For" formControlName="discountfristtimefor" (selectionChange)="selected1()">
+										<mat-option value="{{discountfristtimefor}}" *ngFor="let discountfristtimefor of AVAILABLE_DISCOUNTFFIRSTTIMEFOR">{{discountfristtimefor}}</mat-option>
+									</mat-select>
+									<mat-error>
+										Discount First Time For is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Discount First Time For</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+						</div>
+					</div>
+					<div class="kt-form__group">
+						<div class="row">
+							<div class="col-md-4 kt-margin-bottom-10-mobile" *ngIf="Fixedvalue1">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Sanction Discount Value For Fixed Value" formControlName="discountvalueforFixedValue">
+									<mat-error>
+										Discount Value For Fixed Value  is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>discount value for Fixed Value</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid" *ngIf="Numberofdays">
+									<input matInput placeholder="Sanction Discount Value For Day Numbers" formControlName="daynumbers">
+									<mat-error>
+										Discount Value For Day Numbers
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Discount Value For Day Numbers</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<!-- <mat-form-field class="mat-form-field-fluid">
+
+									<mat-select placeholder="Sanction Discount Type" formControlName="discounttype" [(ngModel)]="selectedLevel" (selectionChange)="selected()">
+										<mat-option value="{{discounttype}}" *ngFor="let discounttype of AVAILABLE_DISCOUNTTYPE">{{discounttype}}</mat-option>
+									</mat-select>
+									<mat-error>
+										Discount Type is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">Please enter
+										<strong>Discount Type </strong>
+									</mat-hint>
+								</mat-form-field> -->
+	<!-- 	</div>
+						</div>
+					</div>
+	<!-- <div class="kt-form__group">
+		<div class="row">
+			<div class="col-md-12 kt-margin-bottom-10-mobile">
+				<mat-form-field class="mat-form-field-fluid">
+					<textarea matInput rows="7" placeholder="Enter Description" formControlName="description"></textarea>
+				</mat-form-field>
+			</div>
+		</div>
+	</div> -->
+	<!--	</div>
+			</form>
+		</div>
+	</kt-portlet-body>
+	</kt-portlet> -->

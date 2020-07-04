@@ -1,0 +1,288 @@
+
+
+	
+
+		<!-- BEGIN PAGE HEADER-->
+		<!-- BEGIN THEME PANEL -->
+		<!-- END THEME PANEL -->
+		<h1 class="page-title">
+			Administration and Sections
+
+			<small></small>
+		</h1>
+
+		<div class="col-md-12">
+			<div class="row pad">
+				<div class="col-md-4">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-id-card-alt"></i>
+							</div>
+						</div>
+						<input type="number" class="form-control" placeholder="Code">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row pad">
+				<div class="col-md-4">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-user"></i>
+							</div>
+						</div>
+						<input class="form-control is-invalid" id="validationServer04" placeholder="Arabic Name">
+						<div class="invalid-feedback">
+							Please Enter Arabic Name.
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="row pad">
+				<div class="col-md-4">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-user"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="English Name">
+					</div>
+				</div>
+			</div>
+
+			<div class="row pad">
+				<div class="col-md-8">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<div class="col-md-12 kt-margin-bottom-10-mobile">
+									<mat-form-field class="mat-form-field-fluid">
+										<textarea matInput rows="7" placeholder="Enter Notes" formControlName="description"></textarea>
+									</mat-form-field>
+								</div>
+							</div>
+
+
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<kt-portlet>
+		<kt-portlet-header [sticky]="true" [title]="getComponentTitle()" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+			<ng-container ktPortletTools>
+				<a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10"  mat-raised-button matTooltip="Back to the sectors list">
+					<i class="la la-arrow-left"></i>
+					<span class="kt-hidden-mobile">Prev</span>
+				</a>
+				<!-- <a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10"  mat-raised-button matTooltip="Back to the products list">
+
+						<span class="kt-hidden-mobile">Next</span>
+						<i class="la la-arrow-right"></i>
+					</a> -->
+<!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+	 <span class="kt-hidden-mobile">Save</span>
+ </a>
+ <!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		 <span class="kt-hidden-mobile">Edit</span>
+ </a> -->
+<!-- <a href="javascript:;" class="btn btn-secondary kt-margin-r-10" (click)="reset()" [disabled]="selectedTab !== 0" mat-raised-button matTooltip="Reset changes">
+	 <i class="la la-cog"></i>
+	 <span class="kt-hidden-mobile">Reset</span>
+ </a>
+ <!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+	 <span class="kt-hidden-mobile">Search</span>
+ </a>
+ <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+	 <span class="kt-hidden-mobile">NEW</span>
+ </a> -->
+<!-- <button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+			<mat-icon>more_vert</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item color="primary" (click)="onSumbit(true)">Save & Exit</button>
+			<button mat-menu-item color="primary">Save & Duplicate</button>
+			<button mat-menu-item color="primary" (click)="onSumbit(false)">Save & Continue</button>
+		</mat-menu>
+	</ng-container>
+</kt-portlet-header>
+<kt-portlet-body>
+		<div>
+
+				<form [formGroup]="dataForm" class="kt-form kt-form--group-seperator-dashed">
+
+					<kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+						Oh snap! Change a few things up and try submitting again.
+					</kt-alert>
+
+					<div class="kt-form__section kt-form__section--first">
+						<div class="kt-form__group">
+							<div class="row">
+									<div class="col-md-4 kt-margin-bottom-10-mobile">
+											<mat-form-field class="mat-form-field-fluid">
+												<input matInput placeholder="code" formControlName="Code">
+												<mat-error>
+												  Code is
+													<strong>required</strong>
+												</mat-error>
+												<mat-hint align="start">Please enter
+													<strong>Code</strong>
+												</mat-hint>
+											</mat-form-field>
+										</div>
+								<div class="col-md-4 kt-margin-bottom-10-mobile">
+									<mat-form-field class="mat-form-field-fluid">
+										<input matInput placeholder=" Name Arabic" formControlName="nameAr">
+										<mat-error>
+											  * Name Arabic is
+											<strong>required</strong>
+										</mat-error>
+										<mat-hint style="color:red" align="start">* Please enter
+											<strong>Name Arabic</strong>
+										</mat-hint>
+									</mat-form-field>
+								</div>
+								<div class="col-md-4 kt-margin-bottom-10-mobile">
+										<mat-form-field class="mat-form-field-fluid">
+											<input matInput placeholder=" Name English" formControlName="nameEn">
+											<mat-error>
+												Name English is
+												<strong>required</strong>
+											</mat-error>
+											<mat-hint align="start">Please enter
+												<strong>Name English</strong>
+											</mat-hint>
+										</mat-form-field>
+									  </div>
+							</div>
+						</div>
+						<div class="kt-form__group">
+								<div class="row">
+									<div class="col-md-4 kt-margin-bottom-10-mobile">
+											<mat-form-field class="mat-form-field-fluid">
+													<mat-select placeholder="Enter Type" formControlName="type">
+														<mat-option value="{{type}}" *ngFor="let type of AVAILABLE_TYPE">{{type}}</mat-option>
+													</mat-select>
+													<mat-error>
+														   * Type
+														<strong>required</strong>
+													</mat-error>
+													<mat-hint style="color:red" align="start">* Please enter
+														<strong>Type</strong>
+													</mat-hint>
+												</mat-form-field>
+									</div>
+									<div class="col-md-4 kt-margin-bottom-10-mobile">
+											<mat-form-field class="mat-form-field-fluid">
+													<mat-select placeholder="Enter Higher Level" formControlName="higherlevel">
+														<mat-option value="{{higherlevel}}" *ngFor="let higherlevel of AVAILABLE_HIGHERLEVEL">{{higherlevel}}</mat-option>
+													</mat-select>
+													<mat-error>
+														   * Higher Level
+														<strong>required</strong>
+													</mat-error>
+													<mat-hint style="color:red" align="start">* Please enter
+														<strong>Higher Level</strong>
+													</mat-hint>
+												</mat-form-field>
+									</div>
+									<div class="col-md-4 kt-margin-bottom-10-mobile">
+										<!-- <mat-form-field class="mat-form-field-fluid"> -->
+<!----  <a class="btn btn-primary  mr-4" routerLink="/personall/defines/job">+</a>
+
+	<a class="btn btn-primary ml-4" routerLink="/personall/defines/job">-</a>
+<!-- </mat-form-field> -->
+<!--      </div>
+									</div>
+								</div>
+								<div class="kt-form__group">
+									<div class="row">
+											<div class="col-md-4 kt-margin-bottom-10-mobile">
+													<mat-form-field class="mat-form-field-fluid">
+														<input matInput placeholder="First Job In Department" formControlName="codefirstjobindepartment">
+														<mat-error>
+															First Job In Department is
+															<strong>required</strong>
+														</mat-error>
+														<mat-hint align="start">Please enter
+															<strong>First Job In Department</strong>
+														</mat-hint>
+													</mat-form-field>
+												</div>
+										<div class="col-md-4 kt-margin-bottom-10-mobile">
+											<mat-form-field class="mat-form-field-fluid">
+												<mat-select placeholder="Enter Job Tittle" formControlName="jobtittle">
+													<mat-option value="{{jobtittle}}" *ngFor="let jobtittle of AVAILABLE_JOBTITTLE">{{jobtittle}}</mat-option>
+												</mat-select>
+												<mat-error>
+													Job Tittle
+													<strong>required</strong>
+												</mat-error>
+												<mat-hint align="start"> Please enter
+													<strong>Job Tittle</strong>
+												</mat-hint>
+											</mat-form-field>
+										</div>
+										<div class="col-md-4 kt-margin-bottom-10-mobile">
+												<mat-form-field class="mat-form-field-fluid">
+													<input matInput placeholder=" Required Number" formControlName="requirednumber">
+													<mat-error>
+														Required Number is
+														<strong>required</strong>
+													</mat-error>
+													<mat-hint align="start">Please enter
+														<strong>Required Number</strong>
+													</mat-hint>
+												</mat-form-field>
+											  </div>
+									</div>
+								</div>
+
+						</div>
+					</form>
+				</div>
+	</kt-portlet-body>
+</kt-portlet> -->

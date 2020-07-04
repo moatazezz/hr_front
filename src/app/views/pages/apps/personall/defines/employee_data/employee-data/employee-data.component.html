@@ -1,0 +1,1098 @@
+<!--<<kt-portlet>
+
+<kt-portlet-body>-->
+
+
+<div class="row">
+	<div class="col-md-12">
+
+		<!-- BEGIN PAGE HEADER-->
+		<!-- BEGIN THEME PANEL -->
+		<!-- END THEME PANEL -->
+		<h1 class="page-title">
+			Employee Data
+			<small></small>
+		</h1>
+		<hr />
+
+		<button type="button" style="margin:5px;" class="btn btn-primary" data-toggle="modal" (click)="refresh()" data-target="#exampleModalLong">
+			Employees List
+		</button>
+		<button type="button" style="margin:5px;" class="btn btn-primary" (click)="save()" data-toggle="modal" data-target="#exampleModalLong">
+			Save
+		</button>
+		<!--<button type="button" style="margin:5px;" class="btn btn-primary" (click)="clear()" >
+			Add New
+		</button>-->
+
+		<form [formGroup]="emp">
+
+			<mat-tab-group #tabgroup mat-align-tabs="center" class="header-less-tabs">
+				<mat-tab label="Employee info">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-5">
+								<div class="input-group pad">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-id-card-alt"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Employee Code" formControlName="code" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="input-group pad">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-user"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Employee Name EN" formControlName="nameEn" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="input-group pad">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-user"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Employee Name AR" formControlName="nameAr" required>
+								</div>
+							</div>
+						</div>
+					</div>
+				</mat-tab>
+				<mat-tab label="Personal Data">
+					<!-- <div class="container-fluid " style="background-color: rgb(4, 48, 61); border: black;">-->
+					<div class="col-md-12">
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-user"></i>
+										</div>
+									</div>
+									<input type="text" class="form-control is-invalid" id="validationServer04" placeholder="Employee Name Ar" formControlName="nameAr" required>
+									<div class="invalid-feedback">
+										Please Enter Arabic Name.
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-user"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Employee Name EN" formControlName="nameEn">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-genderless"> </i>
+										</div>
+										<div class="input-group-text -bg-white">
+											<mat-form-field>
+												<mat-label>Select Gender</mat-label>
+												<select matNativeControl id="mySelectId">
+													<option value="" disabled selected></option>
+													<option value="male">Male</option>
+													<option value="female">Female</option>
+												</select>
+											</mat-form-field>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-praying-hands"></i>
+										</div>
+										<div class="input-group-text -bg-white">
+											<mat-form-field>
+												<mat-label>Select Religion</mat-label>
+												<select matNativeControl id="mySelectId">
+													<option value="" disabled selected></option>
+													<option value="moslem">Moslem</option>
+													<option value="christian">Christian</option>
+												</select>
+											</mat-form-field>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="far fa-calendar-alt"> Hiring Date</i>
+										</div>
+									</div>
+									<input type="date" class="form-control is-invalid" id="validationServer04" placeholder="Hiring Date" required>
+									<div class="invalid-feedback">
+										Please Enter Hiring Date.
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="far fa-id-card"></i>
+										</div>
+										<div class="input-group-text -bg-white">
+											<mat-form-field>
+												<mat-label>Select ID type</mat-label>
+												<select class="form-control is-invalid" id="validationServer04" matNativeControl required>
+													<option value="" disabled selected></option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+												<div class="invalid-feedback">
+													Please Enter ID type.
+												</div>
+											</mat-form-field>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="far fa-id-card"></i>
+										</div>
+									</div>
+									<input class="form-control is-invalid" id="validationServer04" placeholder="ID Number" required>
+									<div class="invalid-feedback">
+										Please Enter ID Number.
+									</div>
+								</div>
+							</div>
+						</div>
+						<br><br><br>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group pad">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-cash-register"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Civil Registry">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="far fa-calendar-alt"> Birth Date</i>
+										</div>
+									</div>
+									<input type="date" class="form-control is-invalid" id="validationServer04" placeholder="Birth Date" formControlName="birthDate" required>
+									<div class="invalid-feedback">
+										Please Enter Birth Date.
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-map-marked-alt"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Place of birth">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-user-friends"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Social Status</mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value="single">Single</option>
+												<option value="married">Married</option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-child"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Number Of Children">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-university"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Qualification">
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="far fa-calendar-alt">Qualification</i>
+										</div>
+									</div>
+									<input type="date" class="form-control is-invalid" id="validationServer04" placeholder="Date of Qualification issued" required>
+									<div class="invalid-feedback">
+										Please Enter Date of Qualification issued .
+									</div>
+								</div>
+							</div>
+						</div>
+						<br><br><br>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-university"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Educational bodies ">
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-university"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="college">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="far fa-building"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="The Depertment">
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-graduation-cap"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Graduation Grade">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-list-ol"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Union membership number ">
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-fighter-jet"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Military State">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-language"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder=" Language of correspondence">
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-envelope"></i>
+										</div>
+									</div>
+									<input class="form-control" placeholder="Email">
+								</div>
+							</div>
+						</div>
+						<div class="row pad">
+							<div class="col-md-4">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-user"></i>
+										</div>
+										<div class="input-group-text -bg-white">
+											<h5>Trianer</h5>
+										</div>
+										<div class="input-group-text -bg-white">
+											<mat-radio-group aria-label="Trianer">
+												<mat-radio-button value="1">yes</mat-radio-button>
+												<mat-radio-button value="2">no</mat-radio-button>
+											</mat-radio-group>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-3">
+								<div class="input-group ">
+									<div class="input-group-prepend">
+										<div class="input-group-text -bg-white">
+											<i class="fas fa-user"></i>
+										</div>
+										<div class="input-group-text -bg-white">
+											<h5>Employee Self Service</h5>
+										</div>
+										<div class="input-group-text -bg-white">
+											<mat-radio-group aria-label="Employee Services User">
+												<mat-radio-button value="1">yes</mat-radio-button>
+												<mat-radio-button value="2">no</mat-radio-button>
+											</mat-radio-group>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</mat-tab>
+				<mat-tab label="Employee Job">
+					<div class="row pad">
+						<div class="col-md-8">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-users-cog"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Administration </mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-8">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-chalkboard-teacher"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Job </mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-8">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-chalkboard-teacher"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Job title</mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-info"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Job Description">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fab fa-sourcetree"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Hiring Source">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-8">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-angle-double-left"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Shift time type</mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="far fa-keyboard"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Type of Job">
+							</div>
+						</div>
+					</div>
+				</mat-tab>
+				<mat-tab label="Employee insurance">
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-lock"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<h5>insured</h5>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-radio-group aria-label="Employee Services User">
+											<mat-radio-button value="1">yes</mat-radio-button>
+											<mat-radio-button value="2">no</mat-radio-button>
+										</mat-radio-group>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group pad">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="far fa-calendar-alt">insurance start date</i>
+									</div>
+								</div>
+								<input class="form-control" type="date">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group pad">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="far fa-calendar-alt">insurance start date of Company</i>
+									</div>
+								</div>
+								<input class="form-control" type="date">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-lock"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Insurance office</mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-list-ol"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="number of insurance">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-money-check-alt"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="insurance salary">
+							</div>
+						</div>
+					</div>
+					<br><br><br>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-money-check-alt"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="variable insurance salary">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-money-check-alt"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="the employee's share of fixed wages">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-money-check-alt"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="the employee's share of variable wages">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-money-check-alt"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="the company's share of fixed wages">
+							</div>
+						</div>
+					</div>	<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-money-check-alt"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="the company's share of variable wages">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-cloud-sun"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="deserves 30 days holiday ">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-sticky-note"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Notes">
+							</div>
+						</div>
+					</div>
+				</mat-tab>
+				<mat-tab label="Employee Contact">
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-phone"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Phone Number">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fal fa-mobile"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Mobile Number">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fal fa-mobile"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Mobile of Work ">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-envelope"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Email of Work ">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-envelope"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Personal Email ">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fal fa-mobile"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Number of a Relative 1 ">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fal fa-mobile"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Number of a Relative 2">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-university"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Country</mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-university"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select City</mat-label>
+											<select matNativeControl id="mySelectId">
+												<option value="" disabled selected></option>
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-people-carry"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Neighborhood ">
+							</div>
+						</div>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-info"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Title description">
+							</div>
+						</div>
+					</div>
+				</mat-tab>
+				<mat-tab label="Contract">
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-file-contract"></i>
+									</div>
+								</div>
+								<select class="custom-select">
+									<option value="0">Select Type of Contract</option>
+									<option value="1"></option>
+									<option value="2"></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group pad">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="far fa-calendar-alt">expiry date</i>
+									</div>
+								</div>
+								<input class="form-control" type="date">
+							</div>
+						</div>
+					</div>
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-sticky-note"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Notice period ">
+							</div>
+						</div>
+					</div>
+				</mat-tab>
+				<mat-tab label="Direct Manger">
+					<button> Add Employee</button>
+				</mat-tab>
+			</mat-tab-group>
+		</form>
+	</div>
+	<!--<div class="col-md-4">
+		<kt-employee-list></kt-employee-list>
+	</div>-->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" role="dialog">
+	<div class="modal-dialog" role="document" data-target="#modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Employees List</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="emplist">
+					<mat-card *ngIf="isLoading"
+							  style="display: flex; justify-content: center; align-items: center">
+						<mat-progress-spinner color="primary"
+											  mode="indeterminate">
+						</mat-progress-spinner>
+					</mat-card>
+					<table class="table table-striped" formArrayName="empDetail">
+						<thead>
+							<tr>
+								<th scope="col">Code</th>
+								<th scope="col">Employee Arabic Name</th>
+								<th scope="col">Employee English Name</th>
+								<th scope="col">Birth Date</th>
+							</tr>
+						</thead>
+						<tbody>
+
+
+							<tr *ngFor="let emp of emplist.controls.empDetail.controls; let i=index"
+								[formGroupName]="i">
+
+								<th scope="row">{{emp.value.code}}</th>
+								<td>{{emp.value.nameAr}}</td>
+								<td>{{emp.value.nameEn}}</td>
+								<td>{{emp.value.birthDate}}</td>
+								<td> <input type="button" value="Edit" data-dismiss="modal" (click)="edit(emp.value.code)"></td>
+							</tr>
+							<!--<tr>
+								<th scope="row">2</th>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>-->
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--</kt-portlet-body>
+		</kt-portlet>-->
+<!-- <script>
+		   function openCity(evt, cityName) {
+			 var i, tabcontent, tablinks;
+			 tabcontent = document.getElementsByClassName("tabcontent");
+			 for (i = 0; i < tabcontent.length; i++) {
+			   tabcontent[i].style.display = "none";
+			 }
+			 tablinks = document.getElementsByClassName("tablinks");
+			 for (i = 0; i < tablinks.length; i++) {
+			   tablinks[i].className = tablinks[i].className.replace(" active", "");
+			 }
+			 document.getElementById(cityName).style.display = "block";
+			 evt.currentTarget.className += " active";
+		   }
+		   // Get the element with id="defaultOpen" and click on it
+		   document.getElementById("defaultOpen").click();
+		   </script>
+		   <h2>Vertical Tabs</h2>
+		   <p>Click on the buttons inside the tabbed menu:</p>
+		   <div class="tab">
+			 <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+			 <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+			 <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+		   </div>
+		   <div id="London" class="tabcontent">
+			 <h3>London</h3>
+			 <p>London is the capital city of England.</p>
+		   </div>
+		   <div id="Paris" class="tabcontent">
+			 <h3>Paris</h3>
+			 <p>Paris is the capital of France.</p>
+		   </div>
+		   <div id="Tokyo" class="tabcontent">
+			 <h3>Tokyo</h3>
+			 <p>Tokyo is the capital of Japan.</p>
+		   </div> -->
+<!-- <div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+						<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div class="tab-content" id="v-pills-tabContent">
+						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+							<div class="form-group">
+								// content
+							</div>
+						</div>
+						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+						<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+<!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item">
+			  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+				aria-selected="true">Home</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" id="profile-tab" data-toggle="tab" routerLink="/personall/defines/personalemployeedata" role="tab" aria-controls="profile"
+				aria-selected="false">Profile</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+				aria-selected="false">Contact</a>
+			</li>
+		  </ul>
+		  <div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
+			  probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+			  cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
+			  keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+			  placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
+			  qui.</div>
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
+			  locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
+			  blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
+			  Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
+			  PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+			  salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
+			  sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+			  stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
+			  wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
+			  lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
+			  locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
+			  squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
+			  etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
+			  stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+		  </div> -->

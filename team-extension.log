@@ -1,0 +1,53 @@
+2020-07-03T18:16:20.382Z - info:   [10840] *** FOLDER: d:\HR_front\Angular\HRFront-End ***
+2020-07-03T18:16:20.383Z - info:   [10840] AzureReposVSCode/1.161.0 (VSCode 1.44.1; Windows_NT 10.0.18362; Node 12.8.1)
+2020-07-03T18:16:20.384Z - debug:  [10840] Looking for an External Context at d:\HR_front\Angular\HRFront-End
+2020-07-03T18:16:20.384Z - debug:  [10840] No External Context at d:\HR_front\Angular\HRFront-End
+2020-07-03T18:16:20.385Z - debug:  [10840] Looking for TFVC repository at d:\HR_front\Angular\HRFront-End
+2020-07-03T18:16:20.385Z - debug:  [10840] TFVC Creating Tfvc object with localPath='undefined'
+2020-07-03T18:16:20.386Z - debug:  [10840] Using TFS proxy: 
+2020-07-03T18:16:20.386Z - debug:  [10840] TFVC Retrieved from settings; localPath='C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe'
+2020-07-03T18:16:20.387Z - warn:   [10840] TFVC C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe does not exist.
+2020-07-03T18:16:20.387Z - error:  [10840] Unable to find the TF executable. Please ensure TF is installed and the path specified contains the filename.
+2020-07-03T19:12:59.532Z - info:   [07540] *** FOLDER: d:\HR_front\Angular\HRFront-End ***
+2020-07-03T19:12:59.533Z - info:   [07540] AzureReposVSCode/1.161.0 (VSCode 1.44.1; Windows_NT 10.0.18362; Node 12.8.1)
+2020-07-03T19:12:59.533Z - debug:  [07540] Looking for an External Context at d:\HR_front\Angular\HRFront-End
+2020-07-03T19:12:59.533Z - debug:  [07540] No External Context at d:\HR_front\Angular\HRFront-End
+2020-07-03T19:12:59.534Z - debug:  [07540] Looking for TFVC repository at d:\HR_front\Angular\HRFront-End
+2020-07-03T19:12:59.534Z - debug:  [07540] TFVC Creating Tfvc object with localPath='undefined'
+2020-07-03T19:12:59.540Z - debug:  [07540] Using TFS proxy: 
+2020-07-03T19:12:59.541Z - debug:  [07540] TFVC Retrieved from settings; localPath='C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe'
+2020-07-03T19:12:59.541Z - warn:   [07540] TFVC C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe does not exist.
+2020-07-03T19:12:59.542Z - error:  [07540] Unable to find the TF executable. Please ensure TF is installed and the path specified contains the filename.
+2020-07-04T13:26:03.631Z - info:   [02704] *** FOLDER: d:\HR_front\Angular\HRFront-End ***
+2020-07-04T13:26:03.632Z - info:   [02704] AzureReposVSCode/1.161.0 (VSCode 1.44.1; Windows_NT 10.0.18362; Node 12.8.1)
+2020-07-04T13:26:03.633Z - debug:  [02704] Looking for an External Context at d:\HR_front\Angular\HRFront-End
+2020-07-04T13:26:03.633Z - debug:  [02704] No External Context at d:\HR_front\Angular\HRFront-End
+2020-07-04T13:26:03.635Z - debug:  [02704] Looking for TFVC repository at d:\HR_front\Angular\HRFront-End
+2020-07-04T13:26:03.635Z - debug:  [02704] TFVC Creating Tfvc object with localPath='undefined'
+2020-07-04T13:26:03.637Z - debug:  [02704] Using TFS proxy: 
+2020-07-04T13:26:03.638Z - debug:  [02704] TFVC Retrieved from settings; localPath='C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe'
+2020-07-04T13:26:03.638Z - warn:   [02704] TFVC C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe does not exist.
+2020-07-04T13:26:03.639Z - error:  [02704] Unable to find the TF executable. Please ensure TF is installed and the path specified contains the filename.
+2020-07-04T14:55:09.777Z - info:   [0852] *** FOLDER: d:\HR_front\Angular\HRFront-End ***
+2020-07-04T14:55:09.779Z - info:   [0852] AzureReposVSCode/1.161.0 (VSCode 1.44.1; Windows_NT 10.0.18362; Node 12.8.1)
+2020-07-04T14:55:09.780Z - debug:  [0852] Looking for an External Context at d:\HR_front\Angular\HRFront-End
+2020-07-04T14:55:09.780Z - debug:  [0852] No External Context at d:\HR_front\Angular\HRFront-End
+2020-07-04T14:55:09.781Z - debug:  [0852] Looking for TFVC repository at d:\HR_front\Angular\HRFront-End
+2020-07-04T14:55:09.782Z - debug:  [0852] TFVC Creating Tfvc object with localPath='undefined'
+2020-07-04T14:55:09.783Z - debug:  [0852] Using TFS proxy: 
+2020-07-04T14:55:09.783Z - debug:  [0852] TFVC Retrieved from settings; localPath='C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe'
+2020-07-04T14:55:09.784Z - warn:   [0852] TFVC C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe does not exist.
+2020-07-04T14:55:09.784Z - error:  [0852] Unable to find the TF executable. Please ensure TF is installed and the path specified contains the filename.
+2020-07-04T14:57:42.689Z - debug:  [0852] Reinitializing due to onDidChangeConfiguration
+2020-07-04T14:57:42.690Z - debug:  [0852] Polling interval value (minutes): 5
+2020-07-04T14:57:42.690Z - debug:  [0852] Polling interval must be greater than 10 minutes.
+2020-07-04T14:57:42.693Z - info:   [0852] *** FOLDER: d:\HR_front\Angular\HRFront-End ***
+2020-07-04T14:57:42.693Z - info:   [0852] AzureReposVSCode/1.161.0 (VSCode 1.44.1; Windows_NT 10.0.18362; Node 12.8.1)
+2020-07-04T14:57:42.694Z - debug:  [0852] Looking for an External Context at d:\HR_front\Angular\HRFront-End
+2020-07-04T14:57:42.694Z - debug:  [0852] No External Context at d:\HR_front\Angular\HRFront-End
+2020-07-04T14:57:42.715Z - debug:  [0852] Looking for TFVC repository at d:\HR_front\Angular\HRFront-End
+2020-07-04T14:57:42.715Z - debug:  [0852] TFVC Creating Tfvc object with localPath='undefined'
+2020-07-04T14:57:42.716Z - debug:  [0852] Using TFS proxy: 
+2020-07-04T14:57:42.717Z - debug:  [0852] TFVC Retrieved from settings; localPath='C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe'
+2020-07-04T14:57:42.717Z - warn:   [0852] TFVC C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\tf.exe does not exist.
+2020-07-04T14:57:42.718Z - error:  [0852] Unable to find the TF executable. Please ensure TF is installed and the path specified contains the filename.

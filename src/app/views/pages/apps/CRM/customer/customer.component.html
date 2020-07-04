@@ -1,0 +1,425 @@
+<p>customer works!</p>
+
+<div class="row">
+	<div class="col-md-12">
+
+		<!-- BEGIN PAGE HEADER-->
+		<!-- BEGIN THEME PANEL -->
+		<!-- END THEME PANEL -->
+		<h1 class="page-title">
+			Customer Data
+			<small></small>
+		</h1>
+		<hr />
+
+		<form [formGroup]="cust" (ngSubmit)="save()">
+			<button type="button" style="margin:5px;" class="btn btn-primary" data-toggle="modal" (click)="refresh()" data-target="#exampleModalLong">
+				Customers List
+			</button>
+
+			<button type="button" style="margin:5px;" class="btn btn-primary" (click)="clear()">
+				Add New
+			</button>
+			<button type="submit" [disabled]="!cust.valid" style="margin:5px;" class="btn btn-primary" > <!--data-toggle="modal" data-target="#exampleModalLong">!-->
+				Save
+			</button>
+
+
+			<div class="row pad">
+				<div class="col-md-5">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-id-card-alt"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Code" formControlName="code" required>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row pad">
+				<div class="col-md-5">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-user"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Name" formControlName="name" required>
+					</div>
+
+				</div>
+				<div class="col-md-5">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="far fa-building"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="First Address" formControlName="street" >
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="row pad">
+				<div class="col-md-5">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-phone"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Phone Number" formControlName="phone">
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="far fa-building"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Second Address" formControlName="street2" >
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="row pad">
+				<div class="col-md-5">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fal fa-mobile"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Mobile Number" formControlName="mobile">
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="far fa-building"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="City" formControlName="city">
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="row pad">
+
+
+				<div class="col-md-5">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="fas fa-envelope"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Email Address" formControlName="email">
+					</div>
+
+					<div *ngIf="errorHandling('email','pattern')" class="text-danger">Email must be a valid email address</div>
+
+
+
+				</div>
+				<div class="col-md-5">
+					<div class="input-group pad">
+						<div class="input-group-prepend">
+							<div class="input-group-text -bg-white">
+								<i class="far fa-building"></i>
+							</div>
+						</div>
+						<input class="form-control" placeholder="Country" formControlName="country" >
+					</div>
+				</div>
+			</div>
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contactdata" role="tab" aria-controls="contactdata" aria-selected="true">
+						Contacts & Addresses
+
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " id="sales-tab" data-toggle="tab" href="#salesdata" role="tab" aria-controls="salesdata" aria-selected="false">
+						Sales
+
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " id="internalnotes-tab" data-toggle="tab" href="#internalnotesdata" role="tab" aria-controls="internalnotesdata" aria-selected="false">
+						Internal Notes
+
+					</a>
+				</li>
+
+			</ul>
+			<div class="tab-content" id="tabContent">
+				<div class="tab-pane fade show active" id="contactdata" role="tabpanel" aria-labelledby="contact-tab">
+					<button type="button" style="margin:5px;" class="btn btn-primary" data-toggle="modal" data-target="#contactModalLong" (click)="editcontact(null,cust.controls.contactPerson.controls.length,true)">
+						Add New Contact
+					</button>
+					<table class="table table-striped" formArrayName="contactPerson" id="table">
+						<col style="width:20%">
+						<col style="width:15%">
+						<col style="width:15%">
+						<col style="width:20%">
+						<col style="width:15%">
+						<col style="width:15%">
+						<thead>
+
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Job Position</th>
+								<th scope="col">Mobile</th>
+								<th scope="col">Email</th>
+							</tr>
+						</thead>
+						<tbody>
+
+
+							<tr *ngFor="let contact of cust.controls.contactPerson.controls; let i=index"
+								[formGroupName]="i">
+
+								<ng-container *ngIf="!contact.value.hide">
+									<td>{{contact.value.name}}</td>
+									<td>{{contact.value.jobPosition}}</td>
+									<td>{{contact.value.mobile}}</td>
+									<td>{{contact.value.email}}</td>
+									<td> <input class="btn btn-primary " style="width:100%" type="button" value="Edit" data-toggle="modal" data-target="#contactModalLong" (click)="editcontact(contact.value,i,false)"></td>
+									<td> <input class="btn btn-danger" style="width:100%" type="button" value="Delete" (click)="delete(contact.value,i)"></td>
+								</ng-container>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-pane fade " id="salesdata" role="tabpanel" aria-labelledby="sales-tab">
+					<div class="row pad">
+						<div class="col-md-4">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-money-bill-alt"></i>
+									</div>
+									<div class="input-group-text -bg-white">
+										<mat-form-field>
+											<mat-label>Select Sales Person</mat-label>
+											<select matNativeControl id="mySelectId" formControlName="salesPersonId" (click)="refreshsales()">
+												<option value=""  selected></option>
+												<option *ngFor="let s of salespersons.controls" [ngValue]="s.value.Id">{{ s.value.Name }}</option>
+
+											</select>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				<div class="tab-pane fade " id="internalnotesdata" role="tabpanel" aria-labelledby="internalnotes-tab">
+					internal notes
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</div>
+
+<!-- Modals -->
+
+<div class="modal fade " id="exampleModalLong" role="dialog" data-backdrop="false">
+
+	<div class="modal-dialog modal-lg" role="document" data-target="#modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Customers List</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="customerlist">
+					<mat-card *ngIf="isLoading"
+							  style="display: flex; justify-content: center; align-items: center">
+						<mat-progress-spinner color="primary"
+											  mode="indeterminate">
+						</mat-progress-spinner>
+					</mat-card>
+					<table class="table table-striped" formArrayName="custDetail" id="table" >
+						
+						<col style="width:20%">
+						<col style="width:15%">
+						<col style="width:15%">
+						<col style="width:20%">
+						<col style="width:15%">
+						<col style="width:15%">
+						<thead>
+
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Phone</th>
+								<th scope="col">Mobile</th>
+								<th scope="col">Email</th>
+							</tr>
+						</thead>
+						<tbody>
+
+
+							<tr *ngFor="let cust of customerlist.controls.custDetail.controls; let i=index"
+								[formGroupName]="i">
+
+
+								<td >{{cust.value.name}}</td>
+								<td >{{cust.value.phone}}</td>
+								<td >{{cust.value.mobile}}</td>
+								<td >{{cust.value.email}}</td>
+								<td style="white-space: nowrap;width:100%;"> <input class="btn btn-primary"  type="button" value="Edit" data-dismiss="modal" (click)="edit(cust.value.id)"></td>
+								<td style="white-space: nowrap;width:100%;"> <input class="btn btn-danger"  type="button" value="Delete" (click)="deletecust(cust.value.id)"></td>
+							</tr>
+							<!--<tr>
+			<th scope="row">2</th>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>-->
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade " id="contactModalLong" role="dialog" data-backdrop="false">
+
+	<div class="modal-dialog modal-lg" role="document" data-target="#modal">
+		<div class="modal-content">
+			<form [formGroup]="contact" (ngSubmit)="updatecontact()">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Contact Person</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+
+
+					<div class="row pad">
+						<div class="col-md-5">
+							<div class="input-group pad">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-user"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Name" formControlName="name" required>
+							</div>
+
+						</div>
+						<div class="col-md-5">
+							<div class="input-group pad">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-briefcase"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Job Position " formControlName="jobPosition" >
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+					<div class="row pad">
+						<div class="col-md-5">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-venus-mars"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Title" formControlName="title">
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="input-group pad">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fas fa-envelope"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Email Adress" formControlName="email">
+							</div>
+							<div *ngIf="errorHandlingcontact('email','pattern')" class="text-danger">Email must be a valid email address</div>
+						</div>
+
+					</div>
+
+
+					<div class="row pad">
+						<div class="col-md-5">
+							<div class="input-group ">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="fal fa-mobile"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Mobile Number" formControlName="mobile">
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="input-group pad">
+								<div class="input-group-prepend">
+									<div class="input-group-text -bg-white">
+										<i class="far fa-building"></i>
+									</div>
+								</div>
+								<input class="form-control" placeholder="Notes" formControlName="notes">
+							</div>
+						</div>
+
+					</div>
+
+
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit" [disabled]="!contact.valid" style="margin:5px;" class="btn btn-primary" data-toggle="modal" data-target="#contactModalLong">
+						update contact
+					</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,252 @@
+
+<h1 class="page-title">
+	Contract Types
+
+	<small></small>
+</h1>
+
+<div class="col-md-12">
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-id-card-alt"></i>
+					</div>
+				</div>
+				<input type="number" class="form-control" placeholder="Contract Type Code">
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-user"></i>
+					</div>
+				</div>
+				<input class="form-control is-invalid" id="validationServer04" placeholder="Contract Type Arabic Name">
+				<div class="invalid-feedback">
+					Please Enter Contract Type Arabic Name.
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-user"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder="Contract Type English Name">
+			</div>
+		</div>
+	</div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group ">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-file-contract"></i>
+					</div>
+					<div class="input-group-text -bg-white">
+						<h6>Contract Type Period</h6>
+					</div>
+
+					<mat-radio-group aria-label="Employee Services User">
+						<mat-radio-button value="1">Mountly</mat-radio-button>
+						<mat-radio-button value="2">Yearly</mat-radio-button>
+					</mat-radio-group>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row pad">
+		<div class="col-md-8">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<div class="col-md-12 kt-margin-bottom-10-mobile">
+							<mat-form-field class="mat-form-field-fluid">
+								<textarea matInput rows="7" placeholder="Enter Notes" formControlName="description"></textarea>
+							</mat-form-field>
+						</div>
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+</div>
+
+
+
+	<!---<kt-portlet>
+		<kt-portlet-header [sticky]="true" [title]="getComponentTitle()" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+			<ng-container ktPortletTools>
+				<a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10"  mat-raised-button matTooltip="Back to the sectors list">
+					<i class="la la-arrow-left"></i>
+					<span class="kt-hidden-mobile">Prev</span>
+				</a>
+				<!-- <a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10"  mat-raised-button matTooltip="Back to the products list">
+
+						<span class="kt-hidden-mobile">Next</span>
+						<i class="la la-arrow-right"></i>
+					</a> -->
+	<!--   <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		   <span class="kt-hidden-mobile">Save</span>
+	   </a>
+	   <!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+			   <span class="kt-hidden-mobile">Edit</span>
+	   </a> -->
+	<!--<a href="javascript:;" class="btn btn-secondary kt-margin-r-10" (click)="reset()" [disabled]="selectedTab !== 0" mat-raised-button matTooltip="Reset changes">
+		<i class="la la-cog"></i>
+		<span class="kt-hidden-mobile">Reset</span>
+	</a>
+	<!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">Search</span>
+	</a>
+	<a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">NEW</span>
+	</a> -->
+	<!--<button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+	<mat-menu #menu="matMenu">
+		<button mat-menu-item color="primary" (click)="onSumbit(true)">Save & Exit</button>
+		<button mat-menu-item color="primary">Save & Duplicate</button>
+		<button mat-menu-item color="primary" (click)="onSumbit(false)">Save & Continue</button>
+	</mat-menu>
+			</ng-container>
+		</kt-portlet-header>
+	<kt-portlet-body>
+		<div>
+
+			<form [formGroup]="dataForm" class="kt-form kt-form--group-seperator-dashed">
+				<kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+					Oh snap! Change a few things up and try submitting again.
+				</kt-alert>
+				<div class="kt-form__section kt-form__section--first">
+					<div class="kt-form__group">
+						<div class="row">
+							<div class="col-md-6 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Contract Type code" formControlName="Code">
+									<mat-error>
+										Code is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>Code</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+							<div class="col-md-6 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Contract Type nameAr" formControlName="nameAr">
+									<mat-error>
+										* NameAr is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint style="color:red" align="start">
+										* Please enter
+										<strong>NameAr</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+						</div>
+					</div>
+					<div class="kt-form__group">
+						<div class="row">
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<mat-form-field class="mat-form-field-fluid">
+									<input matInput placeholder="Contract Type nameEn" formControlName="nameEn">
+									<mat-error>
+										NameEn is
+										<strong>required</strong>
+									</mat-error>
+									<mat-hint align="start">
+										Please enter
+										<strong>NameEn</strong>
+									</mat-hint>
+								</mat-form-field>
+							</div>
+
+							<div class="col-md-2 kt-margin-bottom-10-mobile">
+								<div>period:</div>
+								<mat-radio-group formControlName="period" class="example-radio-group" (change)="onSelectionChange()">
+									<mat-radio-button class="example-radio-button" value="0">Mounthly</mat-radio-button>
+									<mat-radio-button class="example-radio-button" value="1">yearly</mat-radio-button>
+								</mat-radio-group>
+								<!-- <mat-checkbox
+									(change)="list_change()"
+									>Mounthly
+								</mat-checkbox>
+								<mat-checkbox
+									(change)="list_change()"
+									>yearly
+								</mat-checkbox> -->
+	<!--	</div>
+	<div class="col-md-3 kt-margin-bottom-10-mobile" *ngIf="Mounthlyvalue">
+		<mat-form-field class="mat-form-field-fluid">
+			<input matInput placeholder="Period for Mounthly" formControlName="period1">
+			<mat-error>
+				Mounthly is
+				<strong>required</strong>
+			</mat-error>
+			<mat-hint align="start">
+				Please enter
+				<strong>Mounthly</strong>
+			</mat-hint>
+		</mat-form-field>
+	</div>
+	<div class="col-md-3 kt-margin-bottom-10-mobile" *ngIf="Yearlyvalue">
+		<mat-form-field class="mat-form-field-fluid">
+			<input matInput placeholder="Period for yearly" formControlName="period2">
+			<mat-error>
+				yearly is
+				<strong>required</strong>
+			</mat-error>
+			<mat-hint align="start">
+				Please enter
+				<strong>yearly</strong>
+			</mat-hint>
+		</mat-form-field>
+	</div>
+						</div>
+					</div>
+	<div class="kt-form__group">
+		<div class="row">
+			<div class="col-md-12 kt-margin-bottom-10-mobile">
+				<mat-form-field class="mat-form-field-fluid">
+					<textarea matInput rows="7" placeholder="Enter Description" formControlName="description"></textarea>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+				</div>
+			</form>
+		</div>
+	</kt-portlet-body>
+	</kt-portlet> -->

@@ -1,0 +1,302 @@
+
+
+
+<h1 class="page-title">
+	Importing Leave Balances
+
+	<small></small>
+</h1>
+
+<div class="col-md-12">
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group ">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-poll-h"></i>
+					</div>
+					<div class="input-group-text -bg-white">
+						<h6>Vacation Type</h6>
+					</div>
+					
+						<mat-radio-group aria-label="Employee Services User">
+							<mat-radio-button value="1">Causual Vacation</mat-radio-button>
+							<mat-radio-button value="2">Sick Vacation</mat-radio-button>
+							<mat-radio-button value="3">Opening Vacation</mat-radio-button>
+						</mat-radio-group>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-id-card-alt"></i>
+					</div>
+				</div>
+				<input type="number" class="form-control" placeholder="Employee Code">
+			</div>
+		</div>
+	</div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-user"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder="Employee Name">
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-poll"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder="Balances">
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-poll"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder="Curent Balance">
+			</div>
+		</div>
+	</div>
+	<div class="row pad">
+		<div class="col-md-4">
+			<div class="input-group pad">
+				<div class="input-group-prepend">
+					<div class="input-group-text -bg-white">
+						<i class="fas fa-poll"></i>
+					</div>
+				</div>
+				<input class="form-control" placeholder=" Next Balance">
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+	<!--<kt-portlet>
+		<kt-portlet-header [sticky]="true" [title]="getComponentTitle()" [class]="'kt-portlet__head--lg'" [viewLoading$]="loading$">
+			<ng-container ktPortletTools>
+				<a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10" mat-raised-button matTooltip="Back to the sectors list">
+					<i class="la la-arrow-left"></i>
+					<span class="kt-hidden-mobile">Prev</span>
+				</a>
+				<!-- <a (click)="goBackWithoutId()" class="btn btn-secondary kt-margin-r-10"  mat-raised-button matTooltip="Back to the products list">
+
+						<span class="kt-hidden-mobile">Next</span>
+						<i class="la la-arrow-right"></i>
+					</a> -->
+	<!--<a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">Save</span>
+	</a>
+	<!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+			<span class="kt-hidden-mobile">Edit</span>
+	</a> -->
+	<!--<a href="javascript:;" class="btn btn-secondary kt-margin-r-10" (click)="reset()" [disabled]="selectedTab !== 0" mat-raised-button matTooltip="Reset changes">
+		<i class="la la-cog"></i>
+		<span class="kt-hidden-mobile">Reset</span>
+	</a>
+	<!-- <a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">Search</span>
+	</a>
+	<a href="javascript:;" class="btn btn-primary kt-margin-r-10" color="primary" (click)="onSumbit(false)" mat-raised-button matTooltip="Save & Continue">
+		<span class="kt-hidden-mobile">NEW</span>
+	</a> -->
+	<
+	<!--button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+	<mat-menu #menu="matMenu">
+		<button mat-menu-item color="primary" (click)="onSumbit(true)">Save & Exit</button>
+		<button mat-menu-item color="primary">Save & Duplicate</button>
+		<button mat-menu-item color="primary" (click)="onSumbit(false)">Save & Continue</button>
+	</mat-menu>
+			</ng-container>
+		</kt-portlet-header>
+	<kt-portlet-body>
+		<div>
+
+			<form [formGroup]="dataForm" class="kt-form kt-form--group-seperator-dashed">
+				<kt-alert *ngIf="hasFormErrors" type="warn" [showCloseButton]="true" [duration]="10000" (close)="onAlertClose($event)">
+					Oh snap! Change a few things up and try submitting again.
+				</kt-alert>
+				<div class="kt-form__section kt-form__section--first">
+					<div class="kt-form__group">
+						<div class="row">
+							<div class="col-md-4 kt-margin-bottom-10-mobile">
+								<!-- <div class="file-field md-form">
+										<div mdbBtn color="primary" size="sm" class="waves-light" mdbWavesEffect>
+										  <span>Choose file</span>
+										  <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+										</div>
+										<div class="file-path-wrapper">
+										  <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
+										</div>
+									  </div>   -->
+	<!--<input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="csvInputChange($event)" />
+	<button mat-flat-button color="primary" (click)="csvInput.click()">Choose File</button>
+	<label>{{getfile}}</label>
+	<!-- <label for="singleFile">Upload file</label>
+	 <input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>
+	 <br>
+
+	 <mat-file-upload-queue #fileUploadQueue
+	 [fileAlias]="'file'"
+	 [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+	<mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+	</mat-file-upload-queue> -->
+	<!--	</div>
+	<!--<div class="col-md-4 kt-margin-bottom-10-mobile">
+		<mat-form-field class="mat-form-field-fluid">
+			<mat-select placeholder="Enter Vacation Type" formControlName="vacationtype">
+				<mat-option value="{{vacationtype}}" *ngFor="let vacationtype of AVAILABLE_VACATIONTYPE">{{vacationtype}}</mat-option>
+			</mat-select>
+			<mat-error>
+				Vacation Type
+				<strong>required</strong>
+			</mat-error>
+			<mat-hint align="start">
+				Please enter
+				<strong>Vacation Type</strong>
+			</mat-hint>
+		</mat-form-field>
+
+	</div>
+	<div class="col-md-4 kt-margin-bottom-10-mobile">
+		<mat-form-field class="mat-form-field-fluid">
+			<input matInput placeholder="Employee Code" formControlName="employeecode">
+			<mat-error>
+				Employee Code is
+				<strong>required</strong>
+			</mat-error>
+			<mat-hint align="start">
+				Please enter
+				<strong>Employee Code</strong>
+			</mat-hint>
+		</mat-form-field>
+
+	</div>
+
+						</div>
+					</div>
+	<div class="kt-form__group">
+		<div class="row">
+			<div class="col-md-4 kt-margin-bottom-10-mobile">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Employee Name" formControlName="employeename">
+					<mat-error>
+						Employee Name is
+						<strong>required</strong>
+					</mat-error>
+					<mat-hint align="start">
+						Please enter
+						<strong>Employee Name</strong>
+					</mat-hint>
+				</mat-form-field>
+
+			</div>
+			<div class="col-md-4 kt-margin-bottom-10-mobile">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Enter Balances" formControlName="balances">
+					<mat-error>
+						Balances is
+						<strong>required</strong>
+					</mat-error>
+					<mat-hint align="start">
+						Please enter
+						<strong>Balances</strong>
+					</mat-hint>
+				</mat-form-field>
+
+			</div>
+			<div class="col-md-4 kt-margin-bottom-10-mobile">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Current Balance" formControlName="currentbalance">
+					<mat-error>
+						Current Balance is
+						<strong>required</strong>
+					</mat-error>
+					<mat-hint align="start">
+						Please enter
+						<strong>Current Balance</strong>
+					</mat-hint>
+				</mat-form-field>
+
+			</div>
+		</div>
+	</div>
+	<div class="kt-form__group">
+		<div class="row">
+
+			<div class="col-md-4 kt-margin-bottom-10-mobile">
+
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput placeholder="Next Balance" formControlName="nextbalance">
+					<mat-error>
+						Next Balance is
+						<strong>required</strong>
+					</mat-error>
+					<mat-hint align="start">
+						Please enter
+						<strong>Next Balance</strong>
+					</mat-hint>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+				</div>
+			</form>
+		</div>
+	</kt-portlet-body>
+	</kt-portlet>   -->
